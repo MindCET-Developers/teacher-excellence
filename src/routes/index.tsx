@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import teachersImg from "@/assets/teachers-collab.jpg";
+import teachersImg from "@/assets/teachers-collab.jpg.asset.json";
 import mindcetLogo from "@/assets/mindcet-logo.png.asset.json";
 import trumpLogo from "@/assets/logo-trump.svg";
 
@@ -93,7 +93,7 @@ function LandingPage() {
           <div className="relative md:col-span-5">
             <div className="absolute -inset-4 -rotate-2 rounded-3xl bg-purple/80" />
             <img
-              src={teachersImg}
+              src={teachersImg.url}
               alt="מורים יוצרים יחד בכיתה"
               width={1280}
               height={896}
