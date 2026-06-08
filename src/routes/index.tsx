@@ -93,8 +93,8 @@ function LandingPage() {
           <div className="relative md:col-span-5">
             <div className="absolute -inset-4 -rotate-2 rounded-3xl bg-purple/80" />
             <img
-              src={teachersImg}
-              alt="מורים יוצרים יחד בכיתה"
+              src={adImg}
+              alt="מהכיתה למעבדה"
               width={1280}
               height={896}
               className="relative aspect-[5/6] w-full rounded-3xl object-cover shadow-2xl"
