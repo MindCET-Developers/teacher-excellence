@@ -55,7 +55,7 @@ function LandingPage() {
                 מהכיתה למעבדה
               </span>
             </div>
-            <h1 className="text-4xl font-black leading-[1.05] text-navy md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl font-bold leading-[1.05] text-navy md:text-6xl lg:text-7xl">
               חוסן, מצוינות
               <br />
               ו־<span className="text-purple">Vibe Coding</span>
@@ -110,11 +110,11 @@ function LandingPage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-12 md:items-center">
           <div className="md:col-span-5">
             <div className="inline-block rotate-[-3deg] rounded-2xl bg-purple px-8 py-6 text-purple-foreground shadow-xl">
-              <div className="text-6xl font-black md:text-7xl">SEL?</div>
+              <div className="text-6xl font-bold md:text-7xl">SEL?</div>
             </div>
           </div>
           <div className="md:col-span-7">
-            <h2 className="text-3xl font-extrabold leading-tight text-navy md:text-4xl">
+            <h2 className="text-3xl font-bold leading-tight text-navy md:text-4xl">
               מה עולה לכם לראש כשאתם שומעים את המושג SEL?
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-foreground/80">
@@ -138,7 +138,7 @@ function LandingPage() {
             <span className="tilt-tag rounded-md bg-navy px-4 py-1.5 text-sm font-bold text-navy-foreground">
               מה תקבלו
             </span>
-            <h2 className="mt-4 text-4xl font-black text-navy md:text-5xl">
+            <h2 className="mt-4 text-4xl font-bold text-navy md:text-5xl">
               הצטרפות לקהילת מורי ומורות
               <br />
               מצוינות מובילים מכל הארץ
@@ -152,7 +152,7 @@ function LandingPage() {
                 className="group relative overflow-hidden rounded-3xl border-2 border-navy/10 bg-card p-7 transition hover:-translate-y-1 hover:border-navy/30 hover:shadow-xl"
               >
                 <div
-                  className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-2xl font-black ${
+                  className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-2xl font-bold ${
                     i % 3 === 0
                       ? "bg-orange text-orange-foreground"
                       : i % 3 === 1
@@ -178,7 +178,7 @@ function LandingPage() {
               <span className="tilt-tag rounded-md bg-orange px-4 py-1.5 text-sm font-bold text-orange-foreground">
                 למי מיועדת
               </span>
-              <h2 className="mt-4 text-4xl font-black leading-tight md:text-5xl">
+              <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
                 מורים ומורות המלמדים בכיתות מצוינות, ז'–י"ב
               </h2>
               <p className="mt-5 text-lg text-navy-foreground/70">
@@ -206,7 +206,7 @@ function LandingPage() {
       <section className="py-24">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
           <div className="rounded-3xl bg-purple p-10 text-purple-foreground">
-            <h3 className="text-3xl font-black">מה זה דורש?</h3>
+            <h3 className="text-3xl font-bold">מה זה דורש?</h3>
             <ul className="mt-6 space-y-4 text-base leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-xl">→</span>
@@ -224,22 +224,22 @@ function LandingPage() {
             </ul>
           </div>
           <div className="rounded-3xl border-2 border-navy bg-cream p-10">
-            <h3 className="text-3xl font-black text-navy">חשוב לדעת</h3>
+            <h3 className="text-3xl font-bold text-navy">חשוב לדעת</h3>
             <ul className="mt-6 space-y-4 text-base leading-relaxed text-foreground/85">
               <li className="flex gap-3">
-                <span className="font-black text-orange">✓</span>
+                <span className="font-bold text-orange">✓</span>
                 ההשתתפות ללא עלות, למעט דמי רישום במצפן.
               </li>
               <li className="flex gap-3">
-                <span className="font-black text-orange">✓</span>
+                <span className="font-bold text-orange">✓</span>
                 כולל לינה וארוחות במסגרת ההאקתון.
               </li>
               <li className="flex gap-3">
-                <span className="font-black text-orange">✓</span>
+                <span className="font-bold text-orange">✓</span>
                 מספר המקומות מוגבל — 100 משתתפים בלבד.
               </li>
               <li className="flex gap-3">
-                <span className="font-black text-orange">✓</span>
+                <span className="font-bold text-orange">✓</span>
                 הגשת מועמדות עד 30.6.26.
               </li>
             </ul>
@@ -254,7 +254,7 @@ function LandingPage() {
             <div className="absolute -right-10 -top-10 h-40 w-40 rotate-12 rounded-3xl bg-orange/90" />
             <div className="absolute -bottom-8 -left-8 h-32 w-32 -rotate-6 rounded-2xl bg-purple/90" />
             <div className="relative">
-              <h2 className="text-4xl font-black md:text-5xl">
+              <h2 className="text-4xl font-bold md:text-5xl">
                 מוכנים להפוך את הכיתה למעבדה?
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg text-navy-foreground/80">
@@ -322,7 +322,7 @@ function Logo() {
           <path d="M4 17c2-6 6-9 8-9s2 3 0 6-2 4 0 4 4-3 6-9" strokeLinecap="round" />
         </svg>
       </div>
-      <span className="text-xl font-black tracking-tight text-navy">mindcet</span>
+      <span className="text-xl font-bold tracking-tight text-navy">mindcet</span>
     </div>
   );
 }
@@ -330,7 +330,7 @@ function Logo() {
 function TrumpFoundation() {
   return (
     <div className="flex items-center gap-2 text-xs leading-tight text-navy/80">
-      <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy font-black text-navy">
+      <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy font-bold text-navy">
         tf
       </div>
       <div>
