@@ -25,11 +25,11 @@ export default function LandingPage() {
       {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0 bg-grid opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-        <div className="pointer-events-none absolute left-[6%] top-12 hidden h-44 w-72 -rotate-6 rounded-3xl bg-orange md:block" />
-        <div className="pointer-events-none absolute right-[8%] top-40 hidden h-32 w-56 rotate-3 rounded-2xl bg-purple md:block" />
+        <div className="pointer-events-none absolute -left-10 -top-6 hidden h-36 w-60 -rotate-6 rounded-3xl bg-orange lg:block" />
+        <div className="pointer-events-none absolute right-[2%] bottom-10 hidden h-28 w-48 rotate-3 rounded-2xl bg-purple lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pb-20 pt-10 md:grid-cols-12 md:pt-16">
-          <div className="md:col-span-7">
+          <div className="relative z-10 md:col-span-7">
             <div className="mb-5">
               <span className="tilt-tag rounded-md bg-navy px-4 py-2 text-base font-bold text-navy-foreground md:text-lg">
                 מהכיתה למעבדה
