@@ -90,16 +90,15 @@ export default function LandingPage() {
       {/* OPENING / SEL HOOK */}
       <section className="bg-cream py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-12 md:items-center">
-          <div className="md:col-span-5">
-            <div className="inline-block rotate-[-3deg] rounded-2xl bg-purple px-8 py-6 text-purple-foreground shadow-xl">
-              <div className="text-6xl font-bold md:text-7xl">SEL?</div>
+          <div className="md:col-span-6">
+            <div className="rotate-[-2deg] rounded-3xl bg-purple px-8 py-10 text-purple-foreground shadow-xl md:px-10 md:py-12">
+              <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+                מה עולה לכם לראש כשאתם שומעים את המושג SEL?
+              </h2>
             </div>
           </div>
-          <div className="md:col-span-7">
-            <h2 className="text-3xl font-bold leading-tight text-navy md:text-4xl">
-              מה עולה לכם לראש כשאתם שומעים את המושג SEL?
-            </h2>
-            <p className="mt-5 text-lg leading-relaxed text-foreground/80">
+          <div className="md:col-span-6">
+            <p className="text-lg leading-relaxed text-foreground/80">
               סביר להניח שלא תלמידי כיתות מצוינות. אבל כל מי שמלמד בכיתות
               מצוינות יודע: מאחורי ההישגים מסתתרים לעתים קרובות חוויית
               לחץ, חרדה, שחיקה ותחושת בדידות.
