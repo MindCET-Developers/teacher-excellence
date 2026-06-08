@@ -245,7 +245,9 @@ export default function LandingPage() {
               </p>
               <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="mailto:rachel@mindcet.io?subject=הרשמה%20למהכיתה%20למעבדה"
+                  href="https://forms.gle/k4zaYmg2YFkDdNKt7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-orange px-10 py-4 text-base font-bold text-orange-foreground shadow-xl transition hover:-translate-y-0.5 hover:brightness-95"
                 >
                   להגשת מועמדות
