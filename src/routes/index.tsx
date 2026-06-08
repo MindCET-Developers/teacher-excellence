@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import teachersImg from "@/assets/teachers-collab.jpg";
+import mindcetLogo from "@/assets/mindcet-logo.png.asset.json";
+import trumpLogo from "@/assets/logo-trump.svg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -316,27 +318,24 @@ const audience = [
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange">
-        <svg viewBox="0 0 24 24" className="h-5 w-5 text-navy" fill="none" stroke="currentColor" strokeWidth="2.5">
-          <path d="M4 17c2-6 6-9 8-9s2 3 0 6-2 4 0 4 4-3 6-9" strokeLinecap="round" />
-        </svg>
-      </div>
-      <span className="text-xl font-bold tracking-tight text-navy">mindcet</span>
-    </div>
+    <img
+      src={mindcetLogo.url}
+      alt="MindCET"
+      width={140}
+      height={42}
+      className="h-9 w-auto md:h-10"
+    />
   );
 }
 
 function TrumpFoundation() {
   return (
-    <div className="flex items-center gap-2 text-xs leading-tight text-navy/80">
-      <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy font-bold text-navy">
-        tf
-      </div>
-      <div>
-        <div className="font-bold">TRUMP FAMILY</div>
-        <div className="font-bold">FOUNDATION</div>
-      </div>
-    </div>
+    <img
+      src={trumpLogo}
+      alt="Trump Family Foundation"
+      width={84}
+      height={50}
+      className="h-10 w-auto md:h-12"
+    />
   );
 }
