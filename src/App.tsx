@@ -47,12 +47,14 @@ export default function LandingPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#register"
-                className="rounded-full bg-orange px-8 py-4 text-base font-bold text-orange-foreground shadow-lg shadow-orange/30 transition hover:-translate-y-0.5 hover:brightness-95"
-              >
-                להגשת מועמדות
-              </a>
+            <a
+              href="https://forms.gle/k4zaYmg2YFkDdNKt7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-orange px-8 py-4 text-base font-bold text-orange-foreground shadow-lg shadow-orange/30 transition hover:-translate-y-0.5 hover:brightness-95"
+            >
+              להגשת מועמדות
+            </a>
               <a
                 href="#program"
                 className="rounded-full border-2 border-navy px-8 py-4 text-base font-bold text-navy transition hover:bg-navy hover:text-navy-foreground"
