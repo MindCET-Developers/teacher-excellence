@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import teachersImg from "@/assets/teachers-collab.jpg";
+import teachersImg from "@/assets/teachers-collab.jpg.asset.json";
 import mindcetLogo from "@/assets/mindcet-logo.png.asset.json";
 import trumpLogo from "@/assets/logo-trump.svg";
 
