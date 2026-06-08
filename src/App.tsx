@@ -1,29 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import teachersImg from "@/assets/teachers-collab.jpg.asset.json";
-import mindcetLogo from "@/assets/mindcet-logo.png.asset.json";
+import teachersImg from "@/assets/teachers-collab.jpg";
+import mindcetLogo from "@/assets/mindcet-logo.png";
 import trumpLogo from "@/assets/logo-trump.svg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "מהכיתה למעבדה: חוסן, מצוינות ו־Vibe Coding | MindCET" },
-      {
-        name: "description",
-        content:
-          "תוכנית למורי כיתות מצוינות לפיתוח פתרונות רגשיים־חברתיים באמצעות AI ו־Vibe Coding. בשיתוף MindCET וקרן טראמפ.",
-      },
-      { property: "og:title", content: "מהכיתה למעבדה: חוסן, מצוינות ו־Vibe Coding" },
-      {
-        property: "og:description",
-        content:
-          "תוכנית למורי כיתות מצוינות לפיתוח פתרונות רגשיים־חברתיים באמצעות AI ו־Vibe Coding.",
-      },
-    ],
-  }),
-  component: LandingPage,
-});
-
-function LandingPage() {
+export default function LandingPage() {
   return (
     <div dir="rtl" className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAV */}
@@ -46,7 +25,6 @@ function LandingPage() {
       {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0 bg-grid opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-        {/* tilted shape behind heading */}
         <div className="pointer-events-none absolute left-[6%] top-12 hidden h-44 w-72 -rotate-6 rounded-3xl bg-orange md:block" />
         <div className="pointer-events-none absolute right-[8%] top-40 hidden h-32 w-56 rotate-3 rounded-2xl bg-purple md:block" />
 
@@ -93,7 +71,7 @@ function LandingPage() {
           <div className="relative md:col-span-5">
             <div className="absolute -inset-4 -rotate-2 rounded-3xl bg-purple/80" />
             <img
-              src={teachersImg.url}
+              src={teachersImg}
               alt="מורים יוצרים יחד בכיתה"
               width={1280}
               height={896}
@@ -319,7 +297,7 @@ const audience = [
 function Logo() {
   return (
     <img
-      src={mindcetLogo.url}
+      src={mindcetLogo}
       alt="MindCET"
       width={140}
       height={42}
