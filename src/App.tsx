@@ -157,7 +157,7 @@ export default function LandingPage() {
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
               <span className="tilt-tag rounded-md bg-orange px-4 py-1.5 text-sm font-bold text-orange-foreground">
-                למי מיועדת
+                למי מיועדת התכנית?
               </span>
               <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
                 מורים ומורות המלמדים בכיתות מצוינות, ז'–י"ב
