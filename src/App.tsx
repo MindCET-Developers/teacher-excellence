@@ -65,7 +65,7 @@ export default function LandingPage() {
 
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-muted-foreground">
               <span>📅 אוקטובר–יוני תשפ"ז</span>
-              <span>👥 100 משתתפים בלבד</span>
+              <span>👥 מספר המשתתפים מוגבל</span>
               <span>🎓 גמול 30 ש"ש</span>
             </div>
           </div>
@@ -217,7 +217,7 @@ export default function LandingPage() {
               </li>
               <li className="flex gap-3">
                 <span className="font-bold text-orange">✓</span>
-                מספר המקומות מוגבל — 100 משתתפים בלבד.
+                מספר המקומות מוגבל.
               </li>
               <li className="flex gap-3">
                 <span className="font-bold text-orange">✓</span>
