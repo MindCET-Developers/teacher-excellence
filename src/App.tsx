@@ -26,7 +26,7 @@ export default function LandingPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-grid opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
         <div className="pointer-events-none absolute -left-10 -top-6 hidden h-36 w-60 -rotate-6 rounded-3xl bg-orange lg:block" />
-        <div className="pointer-events-none absolute right-[2%] bottom-10 hidden h-28 w-48 rotate-3 rounded-2xl bg-purple lg:block" />
+        
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pb-20 pt-10 md:grid-cols-12 md:pt-16">
           <div className="relative z-10 md:col-span-7">
