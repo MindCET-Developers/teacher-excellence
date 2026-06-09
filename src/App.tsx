@@ -189,10 +189,12 @@ export default function LandingPage() {
           <div className="rounded-3xl bg-purple p-10 text-purple-foreground">
             <h3 className="text-3xl font-bold">מה זה דורש?</h3>
             <ul className="mt-6 space-y-4 text-base leading-relaxed">
-              <li className="flex gap-3">
+              <li className="flex flex-col gap-1">
                 <span className="text-xl">→</span>
-                השתתפות במפגשים לאורך השנה: שבעה מפגשים פנים אל פנים,
-                האקתון יומיים בירוחם, מפגשי זום וליווי פרטני.
+                <span>
+                  השתתפות במפגשים לאורך השנה:  מפגשים פנים אל פנים,
+                  האקתון יומיים בירוחם, מפגשי זום וליווי פרטני.
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-xl">→</span>
