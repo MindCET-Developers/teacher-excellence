@@ -221,7 +221,7 @@ export default function LandingPage() {
               </li>
               <li className="flex gap-3">
                 <span className="font-bold text-orange">✓</span>
-                הגשת מועמדות עד 30.6.26.
+                הגשת מועמדות עד 10.7.26.
               </li>
             </ul>
           </div>
