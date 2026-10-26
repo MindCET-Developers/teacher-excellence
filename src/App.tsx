@@ -1,5 +1,5 @@
 import teachersImg from "@/assets/teachers-collab.jpg";
-import mindcetLogo from "@/assets/mindcet-logo-labs.png.asset.json";
+import mindcetLogo from "@/assets/mindcet-logo-labs.png";
 import trumpLogo from "@/assets/logo-trump.svg";
 
 export default function LandingPage() {
@@ -303,7 +303,7 @@ const audience = [
 function Logo() {
   return (
     <img
-      src={mindcetLogo.url}
+      src={mindcetLogo}
       alt="MindCET Labs"
       width={1418}
       height={524}
