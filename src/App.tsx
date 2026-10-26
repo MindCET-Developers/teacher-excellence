@@ -1,5 +1,5 @@
 import teachersImg from "@/assets/teachers-collab.jpg";
-import mindcetLogo from "@/assets/mindcet-logo.png";
+import mindcetLogo from "@/assets/mindcet-logo-labs.png";
 import trumpLogo from "@/assets/logo-trump.svg";
 
 export default function LandingPage() {
@@ -65,6 +65,7 @@ export default function LandingPage() {
 
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-muted-foreground">
               <span>📅 אוקטובר–יוני תשפ"ז</span>
+              <span>🚀 האקתון 1–2 בדצמבר</span>
               <span>👥 מספר המשתתפים מוגבל</span>
               <span>🎓 גמול 30 ש"ש</span>
             </div>
@@ -192,8 +193,8 @@ export default function LandingPage() {
               <li className="flex flex-col gap-1">
                 <span className="text-xl">→</span>
                 <span>
-                  השתתפות במפגשים לאורך השנה:  מפגשים פנים אל פנים,
-                  האקתון יומיים בירוחם, מפגשי זום וליווי פרטני.
+                  השתתפות במפגשים לאורך השנה: מפגשים פנים אל פנים, האקתון
+                  יומיים בירוחם (1–2 בדצמבר), מפגשי זום וליווי פרטני.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -284,7 +285,7 @@ export default function LandingPage() {
 const benefits = [
   { title: "הכשרה מעשית ב־AI וב־Vibe Coding", desc: "כלים מתקדמים שמאפשרים לכם לפתח פתרונות אמיתיים ללא קוד." },
   { title: "ליווי מומחים", desc: "טכנו־פדגוגיה, SEL וחדשנות חינוכית לאורך כל הדרך." },
-  { title: "האקתון יומיים בירוחם", desc: "במתחם החדשנות של MindCET — בנייה אינטנסיבית בקבוצות." },
+  { title: "האקתון יומיים בירוחם", desc: "1–2 בדצמבר, במתחם החדשנות של MindCET — בנייה אינטנסיבית בקבוצות." },
   { title: "כלי Design Thinking", desc: "מתודולוגיות מעולמות הסטארטאפים, מותאמות לחינוך." },
   { title: "ליווי בפיתוח ובדיקה", desc: "פיתוח, ניסוי ו־Testing של הכלי ישירות בכיתה שלכם." },
   { title: 'גמול השתלמות 30 ש"ש', desc: "הכרה רשמית במלוא היקף ההשתתפות והלמידה." },
@@ -303,10 +304,10 @@ function Logo() {
   return (
     <img
       src={mindcetLogo}
-      alt="MindCET"
-      width={140}
-      height={42}
-      className="h-9 w-auto md:h-10"
+      alt="MindCET Labs"
+      width={1418}
+      height={524}
+      className="h-8 w-auto md:h-9"
     />
   );
 }
