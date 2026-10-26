@@ -64,7 +64,7 @@ export default function LandingPage() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-muted-foreground">
-              <span>📅 אוקטובר–יוני תשפ"ז</span>
+              <span>📅 נובמבר–יוני תשפ"ז</span>
               <span>🚀 האקתון 1–2 בדצמבר</span>
               <span>👥 מספר המשתתפים מוגבל</span>
               <span>🎓 גמול 30 ש"ש</span>
