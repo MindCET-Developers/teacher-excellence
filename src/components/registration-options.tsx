@@ -54,7 +54,7 @@ function MitzpenDialog() {
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-lg font-bold text-navy">ימי חמישי</span>
                 <span className="rounded-full bg-purple px-3 py-1 text-xs font-bold text-purple-foreground">
-                  פתרון למידה
+                  פתרון למידה 207286
                 </span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">הפתרון מתחיל ב־19/11</p>
