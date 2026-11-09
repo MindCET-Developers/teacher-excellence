@@ -1,6 +1,7 @@
 import teachersImg from "@/assets/teachers-collab.jpg";
 import mindcetLogo from "@/assets/mindcet-logo-labs.png";
 import trumpLogo from "@/assets/logo-trump.svg";
+import { RegistrationOptions } from "@/components/registration-options";
 
 export default function LandingPage() {
   return (
@@ -245,15 +246,9 @@ export default function LandingPage() {
                 הצטרפו למחזור הראשון של מורות ומורי המצוינות שיבנו בעצמם
                 את הכלים הדיגיטליים של המחר.
               </p>
-              <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-                <a
-                  href="https://forms.gle/k4zaYmg2YFkDdNKt7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-orange px-10 py-4 text-base font-bold text-orange-foreground shadow-xl transition hover:-translate-y-0.5 hover:brightness-95"
-                >
-                  להגשת מועמדות
-                </a>
+              <RegistrationOptions />
+
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a
                   href="mailto:rachel@mindcet.io"
                   className="rounded-full border-2 border-navy-foreground/40 px-10 py-4 text-base font-bold text-navy-foreground transition hover:bg-navy-foreground/10"
