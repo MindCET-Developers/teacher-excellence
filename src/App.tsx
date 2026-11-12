@@ -2,9 +2,23 @@ import teachersImg from "@/assets/teachers-collab.jpg";
 import mindcetLogo from "@/assets/mindcet-logo-labs.png";
 import trumpLogo from "@/assets/logo-trump.svg";
 import { RegistrationOptions } from "@/components/registration-options";
+import { useEffect, useState } from "react";
+import { dicts, LangContext, type Lang } from "@/lib/i18n";
 
 export default function LandingPage() {
+  const [lang, setLang] = useState<Lang>(() =>
+    new URLSearchParams(window.location.search).get("lang") === "ar" ? "ar" : "he",
+  );
+  const t = dicts[lang];
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    const url = new URL(window.location.href);
+    if (lang === "ar") url.searchParams.set("lang", "ar");
+    else url.searchParams.delete("lang");
+    window.history.replaceState(null, "", url);
+  }, [lang]);
   return (
+    <LangContext.Provider value={t}>
     <div dir="rtl" className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAV */}
       <header className="relative z-20">
@@ -14,12 +28,26 @@ export default function LandingPage() {
             <span className="hidden h-8 w-px bg-border sm:block" />
             <TrumpFoundation />
           </div>
+          <div className="flex items-center gap-3">
+          <div className="flex rounded-full border-2 border-navy p-0.5 text-sm font-bold" role="group" aria-label="Language">
+            {(["he", "ar"] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                aria-pressed={lang === l}
+                className={`rounded-full px-3 py-1 transition ${lang === l ? "bg-navy text-navy-foreground" : "text-navy"}`}
+              >
+                {l === "he" ? "עברית" : "العربية"}
+              </button>
+            ))}
+          </div>
           <a
             href="#register"
             className="hidden rounded-full bg-orange px-6 py-2.5 text-sm font-bold text-orange-foreground transition hover:brightness-95 md:inline-flex"
           >
-            לפרטים נוספים
+            {t.moreInfo}
           </a>
+          </div>
         </div>
       </header>
 
@@ -33,18 +61,16 @@ export default function LandingPage() {
           <div className="relative z-10 md:col-span-7">
             <div className="mb-5">
               <span className="tilt-tag rounded-md bg-navy px-4 py-2 text-base font-bold text-navy-foreground md:text-lg">
-                מהכיתה למעבדה
+                {t.tag}
               </span>
             </div>
             <h1 className="text-4xl font-bold leading-[1.05] text-navy md:text-6xl lg:text-7xl">
-              חוסן, מצוינות
+              {t.h1a}
               <br />
-              ו־<span className="text-purple">Vibe Coding</span>
+              {t.h1b}<span className="text-purple">Vibe Coding</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              תוכנית למורות ולמורים יוצרים — לפיתוח פתרונות רגשיים־חברתיים
-              לכיתות מצוינות, באמצעות כלי AI מתקדמים ו־Vibe Coding.
-              ללא צורך בידע קודם בתכנות.
+{t.hero}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -54,21 +80,18 @@ export default function LandingPage() {
               rel="noopener noreferrer"
               className="rounded-full bg-orange px-8 py-4 text-base font-bold text-orange-foreground shadow-lg shadow-orange/30 transition hover:-translate-y-0.5 hover:brightness-95"
             >
-              להגשת מועמדות
+              {t.apply}
             </a>
               <a
                 href="#program"
                 className="rounded-full border-2 border-navy px-8 py-4 text-base font-bold text-navy transition hover:bg-navy hover:text-navy-foreground"
               >
-                למה כדאי להצטרף
+{t.why}
               </a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-muted-foreground">
-              <span>📅 נובמבר–יוני תשפ"ז</span>
-              <span>🚀 האקתון 1–2 בדצמבר</span>
-              <span>👥 מספר המשתתפים מוגבל</span>
-              <span>🎓 גמול 30 ש"ש</span>
+              {t.meta.map((m) => <span key={m}>{m}</span>)}
             </div>
           </div>
 
@@ -76,14 +99,14 @@ export default function LandingPage() {
             <div className="absolute -inset-4 -rotate-2 rounded-3xl bg-purple/80" />
             <img
               src={teachersImg}
-              alt="מורים יוצרים יחד בכיתה"
+              alt={t.imgAlt}
               width={1280}
               height={896}
               className="relative aspect-[5/6] w-full rounded-3xl object-cover shadow-2xl"
             />
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-navy px-5 py-4 text-navy-foreground shadow-xl md:block tilt-tag-r">
-              <div className="text-xs opacity-80">בשיתוף</div>
-              <div className="text-sm font-bold">MindCET × קרן טראמפ</div>
+              <div className="text-xs opacity-80">{t.partner}</div>
+              <div className="text-sm font-bold">{t.partnerName}</div>
             </div>
           </div>
         </div>
@@ -95,19 +118,16 @@ export default function LandingPage() {
           <div className="md:col-span-6">
             <div className="rotate-[-2deg] rounded-3xl bg-purple px-8 py-10 text-purple-foreground shadow-xl md:px-10 md:py-12">
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
-                מה עולה לכם לראש כשאתם שומעים את המושג SEL?
+{t.selQ}
               </h2>
             </div>
           </div>
           <div className="md:col-span-6">
             <p className="text-lg leading-relaxed text-foreground/80">
-              סביר להניח שלא תלמידי כיתות מצוינות. אבל כל מי שמלמד בכיתות
-              מצוינות יודע: מאחורי ההישגים מסתתרים לעתים קרובות חוויית
-              לחץ, חרדה, שחיקה ותחושת בדידות.
+{t.sel1}
             </p>
             <p className="mt-4 text-lg leading-relaxed text-foreground/80">
-              אלה אתגרים שצומחים דווקא מהציפיות הגבוהות — ועדיין, לעתים רחוקות
-              נבנים פתרונות מתוך היכרות אמיתית של המורים עם השטח.
+{t.sel2}
             </p>
           </div>
         </div>
@@ -119,17 +139,15 @@ export default function LandingPage() {
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <span className="tilt-tag rounded-md bg-navy px-4 py-1.5 text-sm font-bold text-navy-foreground">
-              מה תקבלו
+{t.getTag}
             </span>
             <h2 className="mt-4 text-4xl font-bold text-navy md:text-5xl">
-              הצטרפות לקהילת מורי ומורות
-              <br />
-              מצוינות מובילים מכל הארץ
+{t.getH1}<br />{t.getH2}
             </h2>
           </div>
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {benefits.map((b, i) => (
+            {t.benefits.map((b, i) => (
               <article
                 key={b.title}
                 className="group relative overflow-hidden rounded-3xl border-2 border-navy/10 bg-card p-7 transition hover:-translate-y-1 hover:border-navy/30 hover:shadow-xl"
@@ -159,18 +177,18 @@ export default function LandingPage() {
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
               <span className="tilt-tag rounded-md bg-orange px-4 py-1.5 text-sm font-bold text-orange-foreground">
-                למי מיועדת התכנית?
+{t.audTag}
               </span>
               <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-                מורים ומורות המלמדים בכיתות מצוינות, ז'–י"ב
+{t.audH}
               </h2>
               <p className="mt-5 text-lg text-navy-foreground/70">
-                אם אתם מלמדים באחד מהמסלולים הבאים, התוכנית בנויה בשבילכם.
+{t.audP}
               </p>
             </div>
             <div className="md:col-span-7">
               <ul className="grid gap-3 sm:grid-cols-2">
-                {audience.map((a) => (
+                {t.audience.map((a) => (
                   <li
                     key={a}
                     className="flex items-center gap-3 rounded-2xl border border-navy-foreground/15 bg-navy-foreground/5 px-5 py-4 text-base font-medium"
@@ -189,44 +207,25 @@ export default function LandingPage() {
       <section className="py-24">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
           <div className="rounded-3xl bg-purple p-10 text-purple-foreground">
-            <h3 className="text-3xl font-bold">מה זה דורש?</h3>
+            <h3 className="text-3xl font-bold">{t.reqH}</h3>
             <ul className="mt-6 space-y-4 text-base leading-relaxed">
-              <li className="flex flex-col gap-1">
-                <span className="text-xl">→</span>
-                <span>
-                  השתתפות במפגשים לאורך השנה: מפגשים פנים אל פנים, האקתון
-                  יומיים בירוחם (1–2 בדצמבר), מפגשי זום וליווי פרטני.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-xl">→</span>
-                נכונות להתנסות, ליצור ולפתח רעיונות חדשים.
-              </li>
-              <li className="flex gap-3">
-                <span className="text-xl">→</span>
-                רצון להשפיע על החוסן והרווחה של תלמידי המצוינות.
-              </li>
+              {t.req.map((r) => (
+                <li key={r} className="flex gap-3">
+                  <span className="text-xl">→</span>
+                  <span>{r}</span>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="rounded-3xl border-2 border-navy bg-cream p-10">
-            <h3 className="text-3xl font-bold text-navy">חשוב לדעת</h3>
+            <h3 className="text-3xl font-bold text-navy">{t.knowH}</h3>
             <ul className="mt-6 space-y-4 text-base leading-relaxed text-foreground/85">
-              <li className="flex gap-3">
-                <span className="font-bold text-orange">✓</span>
-                ההשתתפות ללא עלות, למעט דמי רישום במצפן.
-              </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-orange">✓</span>
-                כולל לינה וארוחות במסגרת ההאקתון.
-              </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-orange">✓</span>
-                מספר המקומות מוגבל.
-              </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-orange">✓</span>
-                הגשת מועמדות עד 10.7.26.
-              </li>
+              {t.know.map((k) => (
+                <li key={k} className="flex gap-3">
+                  <span className="font-bold text-orange">✓</span>
+                  {k}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -240,11 +239,10 @@ export default function LandingPage() {
             <div className="absolute -bottom-8 -left-8 h-32 w-32 -rotate-6 rounded-2xl bg-purple/90" />
             <div className="relative">
               <h2 className="text-4xl font-bold md:text-5xl">
-                מוכנים להפוך את הכיתה למעבדה?
+{t.ctaH}
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg text-navy-foreground/80">
-                הצטרפו למחזור הראשון של מורות ומורי המצוינות שיבנו בעצמם
-                את הכלים הדיגיטליים של המחר.
+{t.ctaP}
               </p>
               <RegistrationOptions />
 
@@ -269,31 +267,14 @@ export default function LandingPage() {
             <TrumpFoundation />
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MindCET · בשיתוף קרן טראמפ
+            © {new Date().getFullYear()} {t.footer}
           </p>
         </div>
       </footer>
     </div>
+    </LangContext.Provider>
   );
 }
-
-const benefits = [
-  { title: "הכשרה מעשית ב־AI וב־Vibe Coding", desc: "כלים מתקדמים שמאפשרים לכם לפתח פתרונות אמיתיים ללא קוד." },
-  { title: "ליווי מומחים", desc: "טכנו־פדגוגיה, SEL וחדשנות חינוכית לאורך כל הדרך." },
-  { title: "האקתון יומיים בירוחם", desc: "1–2 בדצמבר, במתחם החדשנות של MindCET — בנייה אינטנסיבית בקבוצות." },
-  { title: "כלי Design Thinking", desc: "מתודולוגיות מעולמות הסטארטאפים, מותאמות לחינוך." },
-  { title: "ליווי בפיתוח ובדיקה", desc: "פיתוח, ניסוי ו־Testing של הכלי ישירות בכיתה שלכם." },
-  { title: 'גמול השתלמות 30 ש"ש', desc: "הכרה רשמית במלוא היקף ההשתתפות והלמידה." },
-];
-
-const audience = [
-  '5 יח"ל מתמטיקה',
-  "פיזיקה",
-  "מדעי המחשב",
-  "בגרות הייטק",
-  "מרכזי מצטיינים ומחוננים",
-  'כיתות עמ"ט ונחשון',
-];
 
 function Logo() {
   return (

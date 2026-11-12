@@ -6,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useT } from "@/lib/i18n";
 
 const FORM_URL = "https://forms.gle/k4zaYmg2YFkDdNKt7";
 
@@ -19,50 +20,51 @@ export function RegistrationOptions() {
 }
 
 function MitzpenDialog() {
+  const t = useT();
   return (
     <Dialog>
       <OptionCard
-        badge="עם גמול השתלמות"
+        badge={t.mBadge}
         badgeClass="bg-orange text-orange-foreground"
-        title="מסלול מלא — השתלמות במצפן"
-        text={'מסלול שנתי עם גמול 30 ש"ש: מפגשים, ליווי והאקתון בירוחם.'}
-        cta="לרישום להשתלמות במצפן"
+        title={t.mTitle}
+        text={t.mText}
+        cta={t.mCta}
       >
         <DialogContent className="max-w-xl rounded-3xl border-2 border-navy/10 bg-card p-7 pt-12 sm:p-9 sm:pt-12">
           <DialogHeader className="items-start space-y-3 text-right sm:text-right">
             <DialogTitle className="text-2xl font-bold text-navy md:text-3xl">
-              רישום להשתלמות במצפן
+{t.mDlgTitle}
             </DialogTitle>
             <DialogDescription className="text-base leading-relaxed text-muted-foreground">
-              ניתן להירשם לאחד מתוך 2 פתרונות למידה במצפן:
+              {t.mDlgDesc}
             </DialogDescription>
           </DialogHeader>
 
           <ul className="space-y-3">
             <li className="rounded-2xl border-2 border-navy/10 bg-cream p-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-lg font-bold text-navy">ימי שלישי</span>
+                <span className="text-lg font-bold text-navy">{t.tue}</span>
                 <span className="rounded-full bg-purple px-3 py-1 text-xs font-bold text-purple-foreground">
-                  פתרון למידה 201743
+{t.solution} 201743
                 </span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                הפתרון כבר התחיל · המפגש הבא ב־24/11
+                {t.tueNote}
               </p>
             </li>
             <li className="rounded-2xl border-2 border-navy/10 bg-cream p-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-lg font-bold text-navy">ימי חמישי</span>
+                <span className="text-lg font-bold text-navy">{t.thu}</span>
                 <span className="rounded-full bg-purple px-3 py-1 text-xs font-bold text-purple-foreground">
-                  פתרון למידה 207286
+{t.solution} 207286
                 </span>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">הפתרון מתחיל ב־19/11</p>
+              <p className="mt-2 text-sm text-muted-foreground">{t.thuNote}</p>
             </li>
           </ul>
 
           <p className="text-base leading-relaxed text-foreground/85">
-            לצד הרישום במצפן, יש למלא את טופס הגשת המועמדות בקישור:
+            {t.mFormNote}
           </p>
           <FormLink />
         </DialogContent>
@@ -72,22 +74,23 @@ function MitzpenDialog() {
 }
 
 function HackathonOnlyDialog() {
+  const t = useT();
   return (
     <Dialog>
       <OptionCard
-        badge="ללא גמול השתלמות"
+        badge={t.hBadge}
         badgeClass="bg-purple text-purple-foreground"
-        title="האקתון בלבד"
-        text="השתתפות בהאקתון בירוחם (1–2 בדצמבר) בלי קורס שנתי ובלי גמול השתלמות."
-        cta="לרישום להאקתון בלבד"
+        title={t.hTitle}
+        text={t.hText}
+        cta={t.hCta}
       >
         <DialogContent className="max-w-xl rounded-3xl border-2 border-navy/10 bg-card p-7 pt-12 sm:p-9 sm:pt-12">
           <DialogHeader className="items-start space-y-3 text-right sm:text-right">
             <DialogTitle className="text-2xl font-bold text-navy md:text-3xl">
-              האקתון בלבד — ללא גמול השתלמות
+              {t.hDlgTitle}
             </DialogTitle>
             <DialogDescription className="text-base leading-relaxed text-muted-foreground">
-              יש אפשרות להשתתף בהאקתון עצמו, למי/ה שאינו/ה מעוניין/ת בגמול השתלמות.
+              {t.hDlgDesc}
             </DialogDescription>
           </DialogHeader>
 
@@ -95,13 +98,13 @@ function HackathonOnlyDialog() {
             <li className="flex items-start gap-3 rounded-2xl border-2 border-navy/10 bg-cream p-5">
               <span className="mt-0.5 shrink-0 font-bold text-orange">✓</span>
               <span className="text-base leading-relaxed text-foreground/85">
-                יש למלא את טופס הגשת המועמדות — אותו טופס כמו במסלול המלא.
+                {t.hReq[0]}
               </span>
             </li>
             <li className="flex items-start gap-3 rounded-2xl border-2 border-navy/10 bg-cream p-5">
               <span className="mt-0.5 shrink-0 font-bold text-orange">✓</span>
               <span className="text-base leading-relaxed text-foreground/85">
-                יש להתחייב להשתתפות במפגש זום אחד לפני ההאקתון.
+                {t.hReq[1]}
               </span>
             </li>
           </ul>
@@ -148,6 +151,7 @@ function OptionCard({
 }
 
 function FormLink() {
+  const t = useT();
   return (
     <a
       href={FORM_URL}
@@ -155,7 +159,7 @@ function FormLink() {
       rel="noopener noreferrer"
       className="w-full rounded-full bg-orange px-8 py-3.5 text-center text-base font-bold text-orange-foreground shadow-lg shadow-orange/30 transition hover:-translate-y-0.5 hover:brightness-95"
     >
-      לטופס הגשת המועמדות
+      {t.formLink}
     </a>
   );
 }
