@@ -5,6 +5,9 @@ import { RegistrationOptions } from "@/components/registration-options";
 import { useEffect, useState } from "react";
 import { dicts, LangContext, type Lang } from "@/lib/i18n";
 
+const HE_TITLE = "מהכיתה למעבדה: חוסן, מצוינות ו־Vibe Coding | Mindcet";
+const AR_TITLE = "من الصف إلى المختبر: المناعة النفسية، التميّز وVibe Coding | Mindcet";
+
 export default function LandingPage() {
   const [lang, setLang] = useState<Lang>(() =>
     new URLSearchParams(window.location.search).get("lang") === "ar" ? "ar" : "he",
@@ -12,6 +15,9 @@ export default function LandingPage() {
   const t = dicts[lang];
   useEffect(() => {
     document.documentElement.lang = lang;
+    const title = lang === "ar" ? AR_TITLE : HE_TITLE;
+    document.title = title;
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
     const url = new URL(window.location.href);
     if (lang === "ar") url.searchParams.set("lang", "ar");
     else url.searchParams.delete("lang");

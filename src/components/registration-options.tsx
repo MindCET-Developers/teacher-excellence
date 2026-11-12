@@ -61,6 +61,26 @@ function MitzpenDialog() {
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{t.thuNote}</p>
             </li>
+            <li className="rounded-2xl border-2 border-navy/10 bg-cream p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-lg font-bold text-navy">{t.musTitle}</span>
+                <span className="rounded-full bg-purple px-3 py-1 text-xs font-bold text-purple-foreground">
+{t.solution} 207286
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                {t.musNote} <span dir="ltr">16:00-18:30</span>
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t.musSched.map(([d, txt], i) => (
+                  <span key={i}>
+                    {i > 0 && " · "}
+                    {d && <><span dir="ltr">{d}</span> </>}
+                    {txt}
+                  </span>
+                ))}
+              </p>
+            </li>
           </ul>
 
           <p className="text-base leading-relaxed text-foreground/85">
